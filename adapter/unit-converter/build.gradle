@@ -1,0 +1,21 @@
+plugins {
+	id 'java-library'
+}
+version '1.0-SNAPSHOT'
+
+project.ext.set("moduleName", "unit-converter")
+
+sourceCompatibility = 1.11
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation(
+		project(':usecase'),
+		'org.slf4j:slf4j-api:2.0.0-alpha1'
+	)
+	compileOnly 'org.projectlombok:lombok:1.18.8'
+	annotationProcessor 'org.projectlombok:lombok:1.18.8'
+}

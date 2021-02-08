@@ -1,0 +1,22 @@
+plugins {
+	id 'java-library'
+}
+version '1.0-SNAPSHOT'
+
+project.ext.set("moduleName", "in-memorydb-repository")
+
+sourceCompatibility = 1.11
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation(
+		project(':domain'),
+		project(':usecase')
+	)
+
+	compileOnly 'org.projectlombok:lombok:1.18.8'
+	annotationProcessor 'org.projectlombok:lombok:1.18.8'
+}

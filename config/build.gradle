@@ -1,0 +1,26 @@
+plugins {
+	id 'java-library'
+}
+version '1.0-SNAPSHOT'
+
+project.ext.set("moduleName", "config")
+
+sourceCompatibility = 1.11
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation(
+		project(':usecase'),
+		project(':domain'),
+		project(':in-memorydb-repository'),
+		project(':dynamodb-repository'),
+		project(':unit-converter'),
+		project(':controller'),
+	)
+
+	compileOnly 'org.projectlombok:lombok:1.18.8'
+	annotationProcessor 'org.projectlombok:lombok:1.18.8'
+}

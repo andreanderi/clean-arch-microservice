@@ -1,0 +1,21 @@
+plugins {
+	id 'java-library'
+}
+version '1.0-SNAPSHOT'
+
+project.ext.set("moduleName", "controller")
+
+sourceCompatibility = 1.11
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation(
+		project(':usecase'),
+		project(':domain'),
+	)
+	compileOnly 'org.projectlombok:lombok:1.18.8'
+	annotationProcessor 'org.projectlombok:lombok:1.18.8'
+}

@@ -1,0 +1,21 @@
+rootProject.name = 'clean-architecture-microservice'
+
+include ':config'
+include ':domain'
+include ':usecase'
+include ':controller'
+include ':unit-converter'
+
+include ':console-app'
+include ':spring-app'
+include ':dynamodb-repository'
+include ':in-memorydb-repository'
+
+project(":in-memorydb-repository").projectDir = file("adapter/repository/inmemorydb")
+project(":controller").projectDir = file("adapter/controller")
+project(":unit-converter").projectDir = file("adapter/unit-converter")
+project(":dynamodb-repository").projectDir = file("adapter/repository/dynamodb")
+
+project(":console-app").projectDir = file("application/console")
+project(":spring-app").projectDir = file("application/spring")
+
